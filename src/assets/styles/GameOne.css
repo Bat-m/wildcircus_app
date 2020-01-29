@@ -2,6 +2,11 @@
   background-color: #210409c7;
   height: 100vh;
   color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .mybutton {

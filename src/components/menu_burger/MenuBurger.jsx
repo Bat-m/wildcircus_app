@@ -26,7 +26,7 @@ const MenuBurger = () => {
             <p>Home</p>
           </NavLink>
           <NavLink to="/GameOne" onClick={() => closeMenu()}>
-            <p>Jeu 1</p>
+            <p>Dompte le lion</p>
           </NavLink>
           <NavLink to="/GameTwo" onClick={() => closeMenu()}>
             <p>Jeu 2</p>

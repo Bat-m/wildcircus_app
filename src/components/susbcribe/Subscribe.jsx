@@ -8,7 +8,14 @@ const Subscribe = () => {
   const mail = useRef();
   const password = useRef();
 
-  const submitForm = () => {};
+  const submitForm = () => {
+    axios.post('http://localhost:5000/login', {
+      firstname: firstname.current.value,
+      lastname: lastname.current.value,
+      mail: mail.current.value,
+      password: password.current.value
+    });
+  };
 
   return (
     <div className="subscribe">
