@@ -1,0 +1,11 @@
+.bckg-gameone {
+  background-color: #210409c7;
+  height: 100vh;
+  color: white;
+}
+
+.mybutton {
+  border: 1px solid white;
+  height: 50px;
+  width: 50px;
+}

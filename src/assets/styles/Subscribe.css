@@ -1,0 +1,17 @@
+.subscribe {
+  color: white;
+  background-color: #210409c7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.subscribe > * input {
+  /* margin-left: 30px;
+  left: 8px;
+  position: relative; */
+}
