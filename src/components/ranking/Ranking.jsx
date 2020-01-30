@@ -7,7 +7,7 @@ export const Ranking = () => {
 
   useEffect(() => {
     axios.get('http://localhost:5000/').then(res => setRanking(res.data));
-  }, []);
+  }, [ranking]);
 
   return (
     <div className="bckg-ranking">

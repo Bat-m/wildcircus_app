@@ -57,7 +57,6 @@ const GameOne = () => {
   const getSimba = () => {
     document.getElementById('simba').style.visibility = 'hidden';
     clearInterval(startTimer);
-    console.log('count', count);
     clearInterval(top);
     clearInterval(left);
     setFinal(true);
