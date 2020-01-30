@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { Animated } from 'react-animated-css';
+import CircusContext from '../../routes/CircusContext';
 import simba from '../../assets/img/Simba.png';
 import '../../assets/styles/GameOne.css';
 import axios from 'axios';
 
 const GameOne = () => {
+  const data = React.useContext(CircusContext);
   const [top, setTop] = useState();
   const [left, setLeft] = useState();
   const [startTimer, setStartTimer] = useState();
   const [count, setCount] = useState(0);
-  const [score, setScore] = useState(0);
+  const [start, setStart] = useState(true);
+  const [final, setFinal] = useState(false);
+
+  const [size, setSize] = useState([0, 0]);
 
   useEffect(() => {
     document.getElementById('simba').style.visibility = 'hidden';
+    setSize([window.innerWidth, window.innerHeight]);
   }, []);
 
   const randomizeTopSimba = toper => {
@@ -20,7 +27,7 @@ const GameOne = () => {
         document.getElementById('simba').style.top = `${Math.floor(
           Math.random() * Math.floor(1000)
         )}px`;
-      }, 600)
+      }, 800)
     );
   };
 
@@ -30,7 +37,7 @@ const GameOne = () => {
         document.getElementById('simba').style.left = `${Math.floor(
           Math.random() * Math.floor(1000)
         )}px`;
-      }, 600)
+      }, 800)
     );
   };
 
@@ -41,6 +48,8 @@ const GameOne = () => {
         setCount(count => count + 1);
       }, 1000)
     );
+    setStart(false);
+    console.log(size);
     randomizeLeftSimba();
     randomizeTopSimba();
   };
@@ -48,32 +57,55 @@ const GameOne = () => {
   const getSimba = () => {
     document.getElementById('simba').style.visibility = 'hidden';
     clearInterval(startTimer);
-    setTimeout(() => {
-      setCount(0);
-    }, 300);
-
     clearInterval(top);
     clearInterval(left);
-    setScore(count * 10);
+    setFinal(true);
+
+    setTimeout(() => {
+      setFinal(false);
+      setStart(true);
+      setCount(0);
+      temp();
+    }, 3000);
+  };
+
+  const temp = () => {
+    axios.put(`http://localhost:5000/score/${data.data.id}`, {
+      score: count * 10
+    });
   };
 
   const styleImg = {
     width: '80px',
     height: '80px',
-    position: 'relative'
+    position: 'absolute'
   };
 
   return (
     <div className="bckg-gameone">
-      counter: {count}
-      <div
-        className="mybutton"
-        onClick={() => {
-          startSimba();
-        }}
-      >
-        Play
-      </div>
+      <div className="timer-top">Timer: {count}</div>
+      <div className="other"></div>
+      {start && (
+        <div
+          className="mybutton"
+          onClick={() => {
+            startSimba();
+          }}
+        >
+          Play
+        </div>
+      )}
+      {final && (
+        <Animated
+          animationIn="tada"
+          animationOut="fadeOutDown"
+          animationInDuration={400}
+          animationOutDuration={400}
+          isVisible={true}
+        >
+          <div className="myFinal">Votre score est de {count * 10}</div>
+        </Animated>
+      )}
       <img
         id="simba"
         src={simba}

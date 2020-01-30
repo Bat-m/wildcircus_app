@@ -1,0 +1,27 @@
+.bckg-ranking {
+  background-color: #210409c7;
+  height: 100vh;
+  color: white;
+}
+.take-in-ranking {
+  width: auto;
+  padding-top: 9%;
+}
+
+.list-ranking {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.list-try-ranking {
+  margin: 2%;
+  width: 100%;
+}
+.list-try-ranking.title {
+  text-decoration: underline;
+  font-size: 21px;
+}

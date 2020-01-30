@@ -29,7 +29,7 @@ const MenuBurger = () => {
             <p>Dompte le lion</p>
           </NavLink>
           <NavLink to="/GameTwo" onClick={() => closeMenu()}>
-            <p>Jeu 2</p>
+            <p>Chope the balloon</p>
           </NavLink>
           <NavLink to="/GameThree" onClick={() => closeMenu()}>
             <p>Jeu 3</p>
