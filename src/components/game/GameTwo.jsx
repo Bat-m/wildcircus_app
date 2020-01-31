@@ -84,7 +84,8 @@ const GameTwo = () => {
 
   return (
     <div className="bckg-gametwo">
-      <div className="timer-top-gametwo">Timer: {count}</div>
+      {!start && <div className="timer-top-gametwo">Timer: {count}</div>}
+
       {start && (
         <div
           className="mybutton-gametwo"
@@ -93,6 +94,12 @@ const GameTwo = () => {
           }}
         >
           Play
+        </div>
+      )}
+      {start && (
+        <div className="text-gametwo">
+          Attrape autant de ballons que possible, en cliquant dessus, dans le
+          temps imparti.
         </div>
       )}
       {final && (

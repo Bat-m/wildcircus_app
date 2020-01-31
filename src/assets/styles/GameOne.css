@@ -27,3 +27,9 @@
   left: 50%;
   font-size: 24px;
 }
+
+.text-gameone {
+  z-index: 10;
+  position: absolute;
+  top: 65%;
+}

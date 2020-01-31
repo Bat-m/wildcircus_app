@@ -35,3 +35,9 @@
   z-index: 3;
   font-size: 24px;
 }
+
+.text-gametwo {
+  z-index: 10;
+  position: absolute;
+  top: 65%;
+}
