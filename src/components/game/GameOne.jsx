@@ -83,7 +83,7 @@ const GameOne = () => {
 
   return (
     <div className="bckg-gameone">
-      <div className="timer-top">Timer: {count}</div>
+      {!start && <div className="timer-top">Timer: {count}</div>}
       <div className="other"></div>
       {start && (
         <div
@@ -94,6 +94,9 @@ const GameOne = () => {
         >
           Play
         </div>
+      )}
+      {start && (
+        <div className="text-gameone">Attrape le lion en cliquant dessus</div>
       )}
       {final && (
         <Animated

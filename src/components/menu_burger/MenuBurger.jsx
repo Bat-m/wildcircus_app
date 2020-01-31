@@ -31,9 +31,9 @@ const MenuBurger = () => {
           <NavLink to="/GameTwo" onClick={() => closeMenu()}>
             <p>Chope the balloon</p>
           </NavLink>
-          <NavLink to="/GameThree" onClick={() => closeMenu()}>
+          {/* <NavLink to="/GameThree" onClick={() => closeMenu()}>
             <p>Jeu 3</p>
-          </NavLink>
+          </NavLink> */}
 
           <NavLink to="/Ranking" onClick={() => closeMenu()}>
             <p>Classement</p>
