@@ -7,7 +7,7 @@ export const Ranking = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/ranking')
+      .get(`${process.env.REACT_APP_AXIOS_URL}/api/ranking`)
       .then(res => setRanking(res.data));
   }, [ranking]);
 

@@ -5,9 +5,9 @@ import it from '../../assets/img/take.png';
 import balloon1 from '../../assets/img/ballon1.png';
 import balloon2 from '../../assets/img/ballon2.png';
 import balloon3 from '../../assets/img/ballon3.png';
-import balloon4 from '../../assets/img/ballon1.png';
-import balloon5 from '../../assets/img/ballon2.png';
-import balloon6 from '../../assets/img/ballon3.png';
+import balloon4 from '../../assets/img/ballon4.png';
+import balloon5 from '../../assets/img/ballon5.png';
+import balloon6 from '../../assets/img/ballon6.png';
 import '../../assets/styles/GameTwo.css';
 import axios from 'axios';
 
@@ -36,10 +36,11 @@ const GameTwo = () => {
     setBallon(ballon => ballon + 1);
     setCountTwo(countTwo => countTwo + 1);
     setScoring(scoring => scoring + 1);
+    console.log(countTwo);
   };
 
   const postGameTwoScore = () => {
-    axios.put(`http://localhost:5000/api/score/${data.data.id}`, {
+    axios.put(`${process.env.REACT_APP_AXIOS_URL}/api/score/${data.data.id}`, {
       score: scoring
     });
   };
@@ -69,13 +70,11 @@ const GameTwo = () => {
   });
 
   const styleImg = {
-    width: '50%',
     height: '100vh',
     position: 'absolute'
   };
 
   const styleImgBalloon = {
-    width: '19%',
     height: '30vh',
     position: 'absolute',
     zIndex: '4',
