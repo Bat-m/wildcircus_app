@@ -12,7 +12,14 @@ import '../../assets/styles/GameTwo.css';
 import axios from 'axios';
 
 const GameTwo = () => {
-  const arrayImg = [balloon1, balloon2, balloon3, balloon4, balloon5, balloon6];
+  const arrayImg = [
+    'rgba(182, 15, 97, 0.9)',
+    'rgba(242, 112, 45, 0.9)',
+    'rgba(45, 181, 167, 0.9)',
+    'rgba(190, 61, 244, 0.9)',
+    'rgba(180, 224, 67, 0.9)',
+    'rgba(242, 194, 58, 0.9)'
+  ];
   const data = React.useContext(CircusContext);
   const [startTimer, setStartTimer] = useState();
   const [count, setCount] = useState(10);
@@ -73,13 +80,6 @@ const GameTwo = () => {
     position: 'absolute'
   };
 
-  const styleImgBalloon = {
-    height: '30vh',
-    position: 'absolute',
-    zIndex: '4',
-    top: '50px'
-  };
-
   return (
     <div className="bckg-gametwo">
       {!start && <div className="timer-top-gametwo">Timer: {count}</div>}
@@ -113,13 +113,29 @@ const GameTwo = () => {
       )}
 
       {ballon === countTwo + 1 && (
-        <img
-          id="balloon-gametwo"
-          src={arrayImg[countTwo]}
-          alt="balloon-gametwo"
-          style={styleImgBalloon}
-          onClick={() => getBalloon()}
-        />
+        <div className="container-balloon">
+          <div className="balloon">
+            <div
+              id="balloon-gametwo"
+              className="color-balloon"
+              style={{
+                height: '17vh',
+                position: 'relative',
+                zIndex: '4',
+                // top: '50px',
+                background: arrayImg[countTwo]
+              }}
+              onClick={() => getBalloon()}
+            ></div>
+          </div>
+        </div>
+        // <img
+        //   id="balloon-gametwo"
+        //   src=arrayImg[countTwo]
+        //   alt="balloon-gametwo"
+        //   style={styleImgBalloon}
+        //   onClick={() => getBalloon()}
+        // />
       )}
 
       <img id="it-gametwo" src={it} alt="it-gametwo" style={styleImg} />
