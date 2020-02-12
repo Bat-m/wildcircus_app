@@ -6,29 +6,25 @@ import axios from 'axios';
 
 const Subscribe = () => {
   const data = React.useContext(CircusContext);
-  const firstname = useRef();
-  const lastname = useRef();
+  const pseudo = useRef();
 
   const submitForm = () => {
     axios
-      .post('http://localhost:5000/login', {
-        firstname: firstname.current.value,
-        lastname: lastname.current.value
+      .post('http://localhost:5000/api/login', {
+        pseudo: pseudo.current.value
       })
-      .then(res =>
+      .then(res => {
         data.setData({
           id: res.data.insertId,
-          firstname: firstname.current.value,
-          lastname: firstname.current.value
-        })
-      );
+          pseudo: pseudo.current.value
+        });
+        pseudo.current.value = '';
+      });
   };
 
   return (
     <div className="subscribe">
-      Nom : <input ref={firstname} type="text" />
-      Prénom :
-      <input ref={lastname} type="text" />
+      Pseudo : <input ref={pseudo} type="text" />
       <input type="submit" value="Envoyer" onClick={() => submitForm()} />
     </div>
   );

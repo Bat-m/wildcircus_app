@@ -11,12 +11,11 @@ import GameThree from '../components/game/GameThree';
 const Routes = () => {
   const [data, setData] = useState({
     id: null,
-    firstname: '',
-    lastname: '',
+    pseudo: '',
     score: null
   });
   return (
-    <div className="spreadPage">
+    <div>
       <CircusContext.Provider
         value={{
           data,

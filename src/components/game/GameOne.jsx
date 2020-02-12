@@ -15,13 +15,13 @@ const GameOne = () => {
   const [final, setFinal] = useState(false);
 
   const [size, setSize] = useState([0, 0]);
-
+  console.log(data);
   useEffect(() => {
     document.getElementById('simba').style.visibility = 'hidden';
     setSize([window.innerWidth, window.innerHeight]);
   }, []);
 
-  const randomizeTopSimba = toper => {
+  const randomizeTopSimba = () => {
     setTop(
       setInterval(() => {
         document.getElementById('simba').style.top = `${Math.floor(
@@ -70,7 +70,7 @@ const GameOne = () => {
   };
 
   const temp = () => {
-    axios.put(`http://localhost:5000/score/${data.data.id}`, {
+    axios.put(`http://localhost:5000/api/score/${data.data.id}`, {
       score: count * 10
     });
   };
@@ -96,7 +96,10 @@ const GameOne = () => {
         </div>
       )}
       {start && (
-        <div className="text-gameone">Attrape le lion en cliquant dessus</div>
+        <div className="text-gameone">
+          Salut{` ` + data.data.pseudo + ` !`} Attrape le lion en cliquant
+          dessus
+        </div>
       )}
       {final && (
         <Animated

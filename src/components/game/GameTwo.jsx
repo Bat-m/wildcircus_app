@@ -39,8 +39,8 @@ const GameTwo = () => {
   };
 
   const postGameTwoScore = () => {
-    axios.put(`http://localhost:5000/score/${data.data.id}`, {
-      score: scoring * 10
+    axios.put(`http://localhost:5000/api/score/${data.data.id}`, {
+      score: scoring
     });
   };
 
@@ -98,8 +98,8 @@ const GameTwo = () => {
       )}
       {start && (
         <div className="text-gametwo">
-          Attrape autant de ballons que possible, en cliquant dessus, dans le
-          temps imparti.
+          Salut{` ` + data.data.pseudo + ` !`} Attrape autant de ballons que
+          possible, en cliquant dessus, dans le temps imparti.
         </div>
       )}
       {final && (
@@ -110,9 +110,7 @@ const GameTwo = () => {
           animationOutDuration={4000}
           isVisible={true}
         >
-          <div className="myFinal-gametwo">
-            Votre score est de {scoring * 10}
-          </div>
+          <div className="myFinal-gametwo">Votre score est de {scoring}</div>
         </Animated>
       )}
 
