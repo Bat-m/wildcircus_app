@@ -14,8 +14,7 @@ const GameOne = () => {
   const [start, setStart] = useState(true);
   const [final, setFinal] = useState(false);
 
-  const [size, setSize] = useState([0, 0]);
-  console.log(data);
+  // const [size, setSize] = useState([0, 0]);
   useEffect(() => {
     document.getElementById('simba').style.visibility = 'hidden';
     setSize([window.innerWidth, window.innerHeight]);
@@ -49,7 +48,6 @@ const GameOne = () => {
       }, 1000)
     );
     setStart(false);
-    console.log(size);
     randomizeLeftSimba();
     randomizeTopSimba();
   };
