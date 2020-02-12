@@ -17,7 +17,7 @@ const GameOne = () => {
   // const [size, setSize] = useState([0, 0]);
   useEffect(() => {
     document.getElementById('simba').style.visibility = 'hidden';
-    setSize([window.innerWidth, window.innerHeight]);
+    // setSize([window.innerWidth, window.innerHeight]);
   }, []);
 
   const randomizeTopSimba = () => {
