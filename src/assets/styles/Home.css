@@ -1,0 +1,26 @@
+.bckg-home {
+  margin: 0;
+  top: 0;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.title-home {
+  position: absolute;
+
+  margin-top: -12px;
+  color: white;
+  font-family: 'Rock Salt', cursive;
+  font-size: 34px;
+}

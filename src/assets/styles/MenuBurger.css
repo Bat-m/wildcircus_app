@@ -1,0 +1,132 @@
+.bm-item-list a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/*pictures*/
+.burger_picture {
+  height: 40px;
+  width: 40px;
+}
+
+.profile_border {
+  border-bottom: solid;
+}
+
+.burger_picture_profile {
+  padding-top: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.burger-sAdmin-picture {
+  height: 50px;
+  width: 50px;
+}
+
+.about_border {
+  border-bottom: solid;
+}
+
+/************************************************************************************/
+/**************** ANIMATE IT ********************************************************/
+/************************************************************************************/
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 15px;
+  top: 15px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #fafafa;
+  border-radius: 50px;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  opacity: 1 !important;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+  display: none;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  top: 0 !important;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #13141530;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  text-align: center;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  height: auto !important;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  padding: 5% 0;
+}
+
+.bm-item:focus {
+  outline: none;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+}
+
+/************************************************************************************/
+/**************** MEDIA QUERIES *****************************************************/
+/************************************************************************************/
+
+@media screen and (max-width: 600px) {
+  .bm-menu-wrap {
+    width: 30% !important;
+  }
+
+  .bm-menu {
+    padding: 10% 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .bm-item {
+    margin: 15% 0;
+  }
+}

@@ -1,0 +1,36 @@
+.bckg-gamethree {
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.mybutton-gamethree {
+  border: 1px solid white;
+  height: 30px;
+  width: 80px;
+  padding-top: 10px;
+  z-index: 1;
+}
+.myFinal-gamethree {
+  height: 30px;
+  width: 80px;
+  padding-top: 10px;
+  z-index: 50;
+  font-size: 21px;
+}
+
+.animated {
+  z-index: 100 !important;
+}
+
+.timer-top-gamethree {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 3;
+  font-size: 24px;
+}
