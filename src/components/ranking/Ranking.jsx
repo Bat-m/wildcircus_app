@@ -9,7 +9,7 @@ export const Ranking = () => {
     axios
       .get(`${process.env.REACT_APP_AXIOS_URL}/api/ranking`)
       .then(res => setRanking(res.data));
-  }, [ranking]);
+  }, []);
 
   return (
     <div className="bckg-ranking">
