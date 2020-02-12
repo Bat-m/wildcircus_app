@@ -68,9 +68,13 @@ const GameOne = () => {
   };
 
   const temp = () => {
-    axios.put(`${process.env.REACT_APP_AXIOS_URL}/api/score/${data.data.id}`, {
-      score: count * 10
-    });
+    data.data.id &&
+      axios.put(
+        `${process.env.REACT_APP_AXIOS_URL}/api/score/${data.data.id}`,
+        {
+          score: count * 10
+        }
+      );
   };
 
   const styleImg = {
