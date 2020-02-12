@@ -12,7 +12,7 @@ import '../../assets/styles/GameTwo.css';
 import axios from 'axios';
 
 const GameTwo = () => {
-  const arrayImg = [
+  const arrayColor = [
     'rgba(182, 15, 97, 0.9)',
     'rgba(242, 112, 45, 0.9)',
     'rgba(45, 181, 167, 0.9)',
@@ -46,9 +46,13 @@ const GameTwo = () => {
   };
 
   const postGameTwoScore = () => {
-    axios.put(`${process.env.REACT_APP_AXIOS_URL}/api/score/${data.data.id}`, {
-      score: scoring
-    });
+    data.data.id &&
+      axios.put(
+        `${process.env.REACT_APP_AXIOS_URL}/api/score/${data.data.id}`,
+        {
+          score: scoring
+        }
+      );
   };
 
   useEffect(() => {
@@ -69,7 +73,7 @@ const GameTwo = () => {
   }, [count]);
 
   useEffect(() => {
-    if (countTwo >= arrayImg.length) {
+    if (countTwo >= arrayColor.length) {
       setCountTwo(0);
       setBallon(1);
     }
@@ -123,19 +127,12 @@ const GameTwo = () => {
                 position: 'relative',
                 zIndex: '4',
                 // top: '50px',
-                background: arrayImg[countTwo]
+                background: arrayColor[countTwo]
               }}
               onClick={() => getBalloon()}
             ></div>
           </div>
         </div>
-        // <img
-        //   id="balloon-gametwo"
-        //   src=arrayImg[countTwo]
-        //   alt="balloon-gametwo"
-        //   style={styleImgBalloon}
-        //   onClick={() => getBalloon()}
-        // />
       )}
 
       <img id="it-gametwo" src={it} alt="it-gametwo" style={styleImg} />

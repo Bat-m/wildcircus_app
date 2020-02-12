@@ -75,8 +75,7 @@ body {
   -o-animation: balloon1 6s ease-in-out infinite;
   animation: balloon1 6s ease-in-out infinite;
 }
-
-.balloon > div:before {
+-b .balloon > div:before {
   color: rgba(182, 15, 97, 0.9);
   position: absolute;
   bottom: -11px;
