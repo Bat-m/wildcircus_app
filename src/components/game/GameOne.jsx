@@ -70,7 +70,7 @@ const GameOne = () => {
   };
 
   const temp = () => {
-    axios.put(`http://localhost:5000/api/score/${data.data.id}`, {
+    axios.put(`${process.env.REACT_APP_AXIOS_URL}/api/score/${data.data.id}`, {
       score: count * 10
     });
   };
