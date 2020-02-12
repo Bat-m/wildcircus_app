@@ -41,7 +41,6 @@ const GameThree = () => {
 
   const clickTheAcrobat = () => {
     document.getElementById('acrobat').style.bottom = '40em';
-    console.log(document.getElementById('acrobat').y);
   };
 
   const startGameThree = () => {
@@ -88,7 +87,6 @@ const GameThree = () => {
     clearInterval(startTimer);
     setTimeout(() => {
       setStart(true);
-      console.log('acrobat ok');
       setCount(0);
       clearInterval(anim);
     }, 300);

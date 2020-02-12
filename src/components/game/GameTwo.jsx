@@ -36,7 +36,6 @@ const GameTwo = () => {
     setBallon(ballon => ballon + 1);
     setCountTwo(countTwo => countTwo + 1);
     setScoring(scoring => scoring + 1);
-    console.log(countTwo);
   };
 
   const postGameTwoScore = () => {

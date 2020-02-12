@@ -7,7 +7,6 @@ import axios from 'axios';
 const Subscribe = () => {
   const data = React.useContext(CircusContext);
   const pseudo = useRef();
-  console.log(process.env.REACT_APP_AXIOS_URL);
   const submitForm = () => {
     axios
       .post(`${process.env.REACT_APP_AXIOS_URL}/api/login`, {
