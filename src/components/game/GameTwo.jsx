@@ -82,7 +82,7 @@ const GameTwo = () => {
   const styleImg = {
     height: '100vh',
     position: 'absolute',
-    width: '100vw'
+    maxWidth: '100%'
   };
 
   return (
