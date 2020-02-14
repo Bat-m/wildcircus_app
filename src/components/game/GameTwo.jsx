@@ -132,7 +132,8 @@ const GameTwo = () => {
                 position: 'relative',
                 zIndex: '4',
                 // top: '50px',
-                background: arrayColor[countTwo]
+                background: arrayColor[countTwo],
+                color: arrayColor[countTwo]
               }}
               onClick={() => getBalloon()}
             ></div>

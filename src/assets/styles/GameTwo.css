@@ -78,11 +78,11 @@ body {
   animation: balloon1 6s ease-in-out infinite;
 }
 .balloon > div:nth-child(1):before {
-  color: rgba(182, 15, 97, 0.9);
+  /* color: rgba(182, 15, 97, 0.9); */
 }
 
 .balloon > div:before {
-  color: rgba(182, 15, 97, 0.9);
+  /* color: rgba(182, 15, 97, 0.9); */
   position: absolute;
   bottom: -11px;
   left: 52px;
