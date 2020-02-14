@@ -10,34 +10,37 @@ const GameOne = () => {
   const [top, setTop] = useState();
   const [left, setLeft] = useState();
   const [startTimer, setStartTimer] = useState();
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(15);
   const [start, setStart] = useState(true);
   const [final, setFinal] = useState(false);
   const [secondFinal, setSecondFinal] = useState(false);
 
-  // const [size, setSize] = useState([0, 0]);
+  const [size, setSize] = useState([0, 0]);
   useEffect(() => {
     document.getElementById('simba').style.visibility = 'hidden';
-    // setSize([window.innerWidth, window.innerHeight]);
+    setSize([window.innerWidth, window.innerHeight]);
   }, []);
 
   const randomizeTopSimba = () => {
     setTop(
       setInterval(() => {
-        document.getElementById('simba').style.top = `${Math.floor(
-          Math.random() * Math.floor(1000)
-        )}px`;
-      }, 800)
+        let tempTop = Math.floor(Math.random() * Math.floor(1000));
+
+        if (tempTop < size[1]) {
+          document.getElementById('simba').style.top = `${tempTop}px`;
+        }
+      }, 650)
     );
   };
 
   const randomizeLeftSimba = () => {
     setLeft(
       setInterval(() => {
-        document.getElementById('simba').style.left = `${Math.floor(
-          Math.random() * Math.floor(1000)
-        )}px`;
-      }, 800)
+        let tempLeft = Math.floor(Math.random() * Math.floor(1000));
+        if (tempLeft < size[0]) {
+          document.getElementById('simba').style.left = `${tempLeft}px`;
+        }
+      }, 650)
     );
   };
 
@@ -64,12 +67,19 @@ const GameOne = () => {
       setFinal(false);
       setStart(true);
       setSecondFinal(false);
-      setCount(10);
+      setCount(15);
       temp();
     }, 3000);
   };
 
   useEffect(() => {
+    console.log('left: ', document.getElementById('simba').style.left);
+    console.log('top: ', document.getElementById('simba').style.top);
+  });
+
+  useEffect(() => {
+    console.log(size);
+
     if (count === 0 && !secondFinal) {
       document.getElementById('simba').style.visibility = 'hidden';
       clearInterval(startTimer);
@@ -80,7 +90,7 @@ const GameOne = () => {
       setTimeout(() => {
         setFinal(false);
         setStart(true);
-        setCount(10);
+        setCount(15);
         temp();
       }, 3000);
     }
