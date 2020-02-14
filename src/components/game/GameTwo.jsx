@@ -128,12 +128,12 @@ const GameTwo = () => {
               id="balloon-gametwo"
               className="color-balloon"
               style={{
-                height: '17vh',
+                height: '15vh',
                 position: 'relative',
                 zIndex: '4',
-                // top: '50px',
                 background: arrayColor[countTwo],
-                color: arrayColor[countTwo]
+                color: arrayColor[countTwo],
+                boxShadow: 'inset 10px 10px 10px  #f5f5f570'
               }}
               onClick={() => getBalloon()}
             ></div>
