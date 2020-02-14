@@ -5,9 +5,9 @@ import logo from '../../assets/img/mycircus2.png';
 const Home = () => {
   return (
     <div className="bckg-home">
-      {/* <div className="logo-home" /> */}
       <img src={logo} alt="logo-home" className="responsive"></img>
       <div className="title-home">Welcomus !</div>
+      <div className="subtitle-home">Les jeux du cirque</div>
     </div>
   );
 };

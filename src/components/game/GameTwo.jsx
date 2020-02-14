@@ -112,7 +112,12 @@ const GameTwo = () => {
           animationOutDuration={4000}
           isVisible={true}
         >
-          <div className="myFinal-gametwo">Votre score est de {scoring}</div>
+          <div className="myFinal-gametwo">
+            {' '}
+            {scoring === 0
+              ? "Oups t'as eu aucun ballon !"
+              : `Ton score est de ${scoring} !`}
+          </div>
         </Animated>
       )}
 

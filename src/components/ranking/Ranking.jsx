@@ -16,7 +16,6 @@ export const Ranking = () => {
       <div className="take-in-ranking">
         <div className="list-ranking">
           <div className="list-try-ranking title">Pseudo</div>
-          {/* <div className="list-try-ranking title">Nom</div> */}
           <div className="list-try-ranking title">Score</div>
         </div>
 
@@ -24,7 +23,6 @@ export const Ranking = () => {
           ranking.map((res, index) => (
             <div key={index} className="list-ranking">
               <div className="list-try-ranking">{res.pseudo}</div>
-              {/* <div className="list-try-ranking">{res.lastname}</div> */}
               <div className="list-try-ranking">{res.score}</div>
             </div>
           ))}
