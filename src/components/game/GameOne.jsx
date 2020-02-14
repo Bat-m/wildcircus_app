@@ -10,9 +10,10 @@ const GameOne = () => {
   const [top, setTop] = useState();
   const [left, setLeft] = useState();
   const [startTimer, setStartTimer] = useState();
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(10);
   const [start, setStart] = useState(true);
   const [final, setFinal] = useState(false);
+  const [secondFinal, setSecondFinal] = useState(false);
 
   // const [size, setSize] = useState([0, 0]);
   useEffect(() => {
@@ -30,7 +31,7 @@ const GameOne = () => {
     );
   };
 
-  const randomizeLeftSimba = lefter => {
+  const randomizeLeftSimba = () => {
     setLeft(
       setInterval(() => {
         document.getElementById('simba').style.left = `${Math.floor(
@@ -44,7 +45,7 @@ const GameOne = () => {
     document.getElementById('simba').style.visibility = 'visible';
     setStartTimer(
       setInterval(() => {
-        setCount(count => count + 1);
+        setCount(count => count - 1);
       }, 1000)
     );
     setStart(false);
@@ -58,14 +59,32 @@ const GameOne = () => {
     clearInterval(top);
     clearInterval(left);
     setFinal(true);
-
+    setSecondFinal(true);
     setTimeout(() => {
       setFinal(false);
       setStart(true);
-      setCount(0);
+      setSecondFinal(false);
+      setCount(10);
       temp();
     }, 3000);
   };
+
+  useEffect(() => {
+    if (count === 0 && !secondFinal) {
+      document.getElementById('simba').style.visibility = 'hidden';
+      clearInterval(startTimer);
+      clearInterval(top);
+      clearInterval(left);
+      setFinal(true);
+
+      setTimeout(() => {
+        setFinal(false);
+        setStart(true);
+        setCount(10);
+        temp();
+      }, 3000);
+    }
+  }, [count]);
 
   const temp = () => {
     data.data.id &&
@@ -80,6 +99,7 @@ const GameOne = () => {
   const styleImg = {
     width: '80px',
     height: '80px',
+    bottom: '50px',
     position: 'absolute'
   };
 
@@ -100,7 +120,7 @@ const GameOne = () => {
       {start && (
         <div className="text-gameone">
           Salut{` ` + data.data.pseudo + ` !`} Attrape le lion en cliquant
-          dessus
+          dessus, dans le temps imparti.
         </div>
       )}
       {final && (
@@ -111,7 +131,11 @@ const GameOne = () => {
           animationOutDuration={400}
           isVisible={true}
         >
-          <div className="myFinal">Votre score est de {count * 10}</div>
+          <div className="myFinal">
+            {count === 0
+              ? 'Oups raté... Réessaye !'
+              : `Ton score est de ${count * 10}`}
+          </div>
         </Animated>
       )}
       <img

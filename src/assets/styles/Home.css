@@ -24,3 +24,11 @@
   font-family: 'Rock Salt', cursive;
   font-size: 34px;
 }
+
+.subtitle-home {
+  position: absolute;
+  bottom: 30%;
+  color: white;
+  font-family: 'Sriracha', cursive;
+  font-size: 17px;
+}

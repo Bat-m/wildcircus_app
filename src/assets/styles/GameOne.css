@@ -9,9 +9,10 @@
 }
 
 .mybutton {
+  font-family: 'Sriracha', cursive;
   border: 1px solid white;
-  height: 30px;
-  width: 80px;
+  height: 42px;
+  width: 90px;
   padding-top: 10px;
 }
 .myFinal {
@@ -31,4 +32,5 @@
   z-index: 10;
   position: absolute;
   top: 65%;
+  font-family: 'Sriracha', cursive;
 }

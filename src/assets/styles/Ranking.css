@@ -18,8 +18,12 @@
 .list-try-ranking {
   margin: 2%;
   width: 100%;
+  font-family: 'Sriracha', cursive;
 }
 .list-try-ranking.title {
   text-decoration: underline;
   font-size: 21px;
+  z-index: 10;
+
+  font-family: 'Sriracha', cursive;
 }

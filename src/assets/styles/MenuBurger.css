@@ -1,5 +1,6 @@
 .bm-item-list a {
   text-decoration: none;
+  font-family: 'Sriracha', cursive;
   color: white;
   transition: color 0.3s ease;
 }

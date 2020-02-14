@@ -10,9 +10,10 @@
 }
 
 .mybutton-gametwo {
+  font-family: 'Sriracha', cursive;
   border: 1px solid white;
-  height: 30px;
-  width: 80px;
+  height: 42px;
+  width: 90px;
   padding-top: 10px;
   z-index: 1;
 }
@@ -40,6 +41,7 @@
   z-index: 10;
   position: absolute;
   top: 65%;
+  font-family: 'Sriracha', cursive;
 }
 
 /* ballon css */
@@ -75,7 +77,11 @@ body {
   -o-animation: balloon1 6s ease-in-out infinite;
   animation: balloon1 6s ease-in-out infinite;
 }
--b .balloon > div:before {
+.balloon > div:nth-child(1):before {
+  color: rgba(182, 15, 97, 0.9);
+}
+
+.balloon > div:before {
   color: rgba(182, 15, 97, 0.9);
   position: absolute;
   bottom: -11px;
